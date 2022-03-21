@@ -1,8 +1,12 @@
 import Link from 'next/link';
 import useCheckActiveLink from '../../hooks/useCheckCurrentLink';
 
-const CustomNavLink = ({ link }) => {
+const CustomNavLink = ({ link, isMobile, close }) => {
   const isCurrent = useCheckActiveLink(link.href, link.current);
+
+  const baseStyles = isMobile
+    ? 'block px-3 py-2 rounded-md text-base font-medium'
+    : 'px-3 py-2 rounded-md text-sm font-medium';
 
   const className = isCurrent
     ? 'bg-gray-900 text-white'
@@ -11,8 +15,9 @@ const CustomNavLink = ({ link }) => {
   return (
     <Link href={link.href} key={link.name}>
       <a
-        className={`px-3 py-2 rounded-md text-sm font-medium ${className}`}
+        className={`${baseStyles} ${className}`}
         aria-current={isCurrent ? 'page' : undefined}
+        onClick={close && close}
       >
         {link.name}
       </a>
