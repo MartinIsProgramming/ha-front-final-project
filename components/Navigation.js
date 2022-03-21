@@ -1,4 +1,4 @@
-import { Disclosure } from '@headlessui/react';
+import { Disclosure, Transition } from '@headlessui/react';
 import { MenuAlt1Icon, XIcon } from '@heroicons/react/outline';
 import Link from 'next/link';
 import CustomNavLink from './shared/CustomNavLink';
@@ -46,20 +46,29 @@ const Navigation = () => {
             </div>
           </div>
 
-          <Disclosure.Panel className="sm:hidden">
-            {({ close }) => (
-              <div className="px-2 pt-2 pb-3 space-y-1">
-                {navigation.map(link => (
-                  <CustomNavLink
-                    key={link.name}
-                    link={link}
-                    isMobile
-                    close={close}
-                  />
-                ))}
-              </div>
-            )}
-          </Disclosure.Panel>
+          <Transition
+            enter="transition ease-out duration-100"
+            enterFrom="transform opacity-0 scale-95"
+            enterTo="transform opacity-100 scale-100"
+            leave="transition ease-out duration-75"
+            leaveFrom="transform opacity-100 scale-100"
+            leaveTo="transform opacity-0 scale-95"
+          >
+            <Disclosure.Panel className="sm:hidden">
+              {({ close }) => (
+                <div className="px-2 pt-2 pb-3 space-y-1">
+                  {navigation.map(link => (
+                    <CustomNavLink
+                      key={link.name}
+                      link={link}
+                      isMobile
+                      close={close}
+                    />
+                  ))}
+                </div>
+              )}
+            </Disclosure.Panel>
+          </Transition>
         </>
       )}
     </Disclosure>
