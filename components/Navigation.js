@@ -11,7 +11,7 @@ const navigation = [
 
 const Navigation = () => {
   return (
-    <Disclosure as="nav" className="bg-gray-800">
+    <Disclosure as="nav" className="shadow-md">
       {({ open }) => (
         <>
           <div className="px-2 mx-auto max-w-7xl sm:px-6 lg:px-8">
@@ -19,7 +19,7 @@ const Navigation = () => {
               <div className="flex items-center justify-start flex-1 sm:items-stretch sm:justify-between">
                 <div className="flex items-center flex-shrink-0">
                   <Link href="/">
-                    <a className="text-2xl text-white">CARSHOP</a>
+                    <a className="text-2xl text-brand-dark">CARSHOP</a>
                   </Link>
                 </div>
                 <div className="hidden sm:block sm:ml-6">
@@ -31,7 +31,7 @@ const Navigation = () => {
                 </div>
               </div>
               <div className="flex items-center sm:hidden">
-                <Disclosure.Button className="inline-flex items-center justify-center p-2 text-gray-400 rounded-md hover:text-white hover:bg-gray-700 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-white">
+                <Disclosure.Button className="inline-flex items-center justify-center p-2 rounded-md text-brand-dark">
                   <span className="sr-only">Open main menu</span>
                   {open ? (
                     <XIcon className="block w-6 h-6" aria-hidden="true" />

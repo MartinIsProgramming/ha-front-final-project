@@ -8,15 +8,15 @@ const navigation = [
 
 const Footer = () => {
   return (
-    <footer className="bg-gray-800">
+    <footer className="bg-brand-dark">
       <div className="flex flex-col items-center py-12 mx-auto space-y-4 max-w-7xl">
         <Link href="/">
-          <a className="text-2xl text-white">CARSHOP</a>
+          <a className="text-2xl text-gray-100">CARSHOP</a>
         </Link>
         <ul className="flex items-center justify-center">
           {navigation.map(({ label, href }) => (
             <li
-              className="py-2 mx-3 text-white rounded hover:underline"
+              className="py-2 mx-3 text-gray-100 rounded hover:underline"
               key={label}
             >
               <Link href={href}>{label}</Link>
