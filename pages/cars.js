@@ -1,5 +1,5 @@
 const CarsPage = () => {
-  return <div>cars</div>;
+  return <div className="min-h-screen">cars</div>;
 };
 
 export default CarsPage;
