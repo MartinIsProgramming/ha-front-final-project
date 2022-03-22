@@ -8,8 +8,8 @@ const navigation = [
 
 const Footer = () => {
   return (
-    <footer className="bg-primary-brand-dark">
-      <div className="flex flex-col items-center max-w-6xl py-12 mx-auto space-y-4">
+    <footer className="border-t-2 bg-primary-brand-dark border-brand-orange">
+      <div className="flex flex-col items-center max-w-6xl py-12 mx-auto space-y-4 sm:py-20">
         <Link href="/">
           <a className="text-2xl text-gray-100">CARSHOP</a>
         </Link>

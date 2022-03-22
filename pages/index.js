@@ -1,7 +1,13 @@
 import HeroSection from '../components/HeroSection';
+import Services from '../components/Services';
 
 const HomePage = () => {
-  return <HeroSection />;
+  return (
+    <>
+      <HeroSection />
+      <Services />
+    </>
+  );
 };
 
 export default HomePage;
