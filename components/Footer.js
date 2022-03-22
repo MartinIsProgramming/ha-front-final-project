@@ -8,7 +8,7 @@ const navigation = [
 
 const Footer = () => {
   return (
-    <footer className="bg-brand-dark">
+    <footer className="bg-primary-brand-dark">
       <div className="flex flex-col items-center max-w-6xl py-12 mx-auto space-y-4">
         <Link href="/">
           <a className="text-2xl text-gray-100">CARSHOP</a>

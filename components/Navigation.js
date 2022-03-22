@@ -17,7 +17,7 @@ const Navigation = () => {
           <div className="px-2 mx-auto max-w-7xl sm:px-6 lg:px-8">
             <div className="flex items-center justify-between h-16">
               <Link href="/">
-                <a className="text-2xl text-brand-dark">CARSHOP</a>
+                <a className="text-2xl text-primary-brand-dark">CARSHOP</a>
               </Link>
               <div className="hidden space-x-2 sm:flex">
                 {navigation.map(link => (
@@ -26,7 +26,7 @@ const Navigation = () => {
               </div>
 
               <div className="sm:hidden">
-                <Disclosure.Button className="p-2 rounded-md focus:outline-none text-brand-dark">
+                <Disclosure.Button className="p-2 rounded-md focus:outline-none text-primary-brand-dark">
                   <span className="sr-only">Open main menu</span>
                   {open ? (
                     <XIcon className="block w-6 h-6" aria-hidden="true" />
