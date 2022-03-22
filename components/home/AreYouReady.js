@@ -1,4 +1,4 @@
-import CallToActionBtn from './shared/CallToActionBtn';
+import CallToActionBtn from '../shared/CallToActionBtn';
 
 const AreYouReady = () => {
   return (

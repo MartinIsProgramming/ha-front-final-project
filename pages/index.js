@@ -1,6 +1,6 @@
-import HeroSection from '../components/HeroSection';
-import Services from '../components/Services';
-import AreYouReady from '../components/AreYouReady';
+import HeroSection from '../components/home/HeroSection';
+import Services from '../components/home/Services';
+import AreYouReady from '../components/home/AreYouReady';
 
 const HomePage = () => {
   return (
