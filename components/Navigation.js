@@ -14,7 +14,7 @@ const Navigation = () => {
     <Disclosure as="nav" className="shadow-md">
       {({ open }) => (
         <>
-          <div className="px-2 mx-auto max-w-7xl sm:px-6 lg:px-8">
+          <div className="px-4 mx-auto max-w-7xl sm:px-6 lg:px-8">
             <div className="flex items-center justify-between h-16">
               <Link href="/">
                 <a className="text-2xl text-primary-brand-dark">CARSHOP</a>

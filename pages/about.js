@@ -1,5 +1,11 @@
+import Founders from '../components/Founders';
+
 const AboutPage = () => {
-  return <div className="min-h-screen">about</div>;
+  return (
+    <>
+      <Founders />
+    </>
+  );
 };
 
 export default AboutPage;
