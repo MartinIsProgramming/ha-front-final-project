@@ -17,7 +17,7 @@ const HeroSection = () => {
       <div className="mx-auto mt-5 space-y-2 sm:space-x-2 sm:space-y-0 sm:max-w-md md:max-w-xl sm:mt-8 sm:flex sm:justify-center">
         <CallToActionBtn href="/about" text="Know more" />
         {/* This link will eventually lead the user to GitHub account */}
-        <CallToActionBtn href="cars" text="developer" isSecondary />
+        <CallToActionBtn href="/cars" text="developer" isSecondary />
       </div>
     </section>
   );
