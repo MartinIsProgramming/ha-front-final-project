@@ -52,10 +52,12 @@ const founder = person => (
 
 const Founders = () => {
   return (
-    <section className="px-4 py-12 mx-auto sm:py-20 sm:px-6 max-w-7xl lg:px-8">
-      <SectionTitle title="Meet the team" label="Founders" />
-      <div className="grid grid-cols-1 mt-8 gap-y-10 sm:grid-cols-2 md:grid-cols-3 gap-x-6 xl:gap-x-8">
-        {founders.map(person => founder(person))}
+    <section className="bg-gray-50">
+      <div className="px-4 py-12 mx-auto bg-gray-50 sm:py-20 sm:px-6 lg:px-8 max-w-7xl">
+        <SectionTitle title="Meet the team" label="Founders" />
+        <div className="grid grid-cols-1 mt-8 gap-y-10 sm:grid-cols-2 md:grid-cols-3 gap-x-6 xl:gap-x-8">
+          {founders.map(person => founder(person))}
+        </div>
       </div>
     </section>
   );
