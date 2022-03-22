@@ -1,4 +1,5 @@
 import Image from 'next/image';
+import SectionTitle from './shared/SectionTitle';
 
 const founders = [
   {
@@ -52,12 +53,7 @@ const founder = person => (
 const Founders = () => {
   return (
     <section className="px-4 py-12 mx-auto sm:py-20 sm:px-6 max-w-7xl lg:px-8">
-      <h2 className="text-base font-semibold tracking-wide uppercase text-brand-orange">
-        Founders
-      </h2>
-      <p className="mt-2 text-3xl font-extrabold leading-8 tracking-tight text-primary-brand-dark sm:text-4xl">
-        Meet the team
-      </p>
+      <SectionTitle title="Meet the team" label="Founders" />
       <div className="grid grid-cols-1 mt-8 gap-y-10 sm:grid-cols-2 md:grid-cols-3 gap-x-6 xl:gap-x-8">
         {founders.map(person => founder(person))}
       </div>

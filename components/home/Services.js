@@ -4,6 +4,7 @@ import {
   TruckIcon,
   LightningBoltIcon,
 } from '@heroicons/react/outline';
+import SectionTitle from '../shared/SectionTitle';
 
 const services = [
   {
@@ -36,12 +37,7 @@ const Welcome = () => {
   return (
     <section className="py-12 bg-gray-50 sm:py-20">
       <div className="px-4 mx-auto max-w-7xl sm:px-6 lg:px-8">
-        <h2 className="text-base font-semibold tracking-wide uppercase text-brand-orange">
-          Services
-        </h2>
-        <p className="mt-2 text-3xl font-extrabold leading-8 tracking-tight text-primary-brand-dark sm:text-4xl">
-          Welcome to Carshop
-        </p>
+        <SectionTitle title="Welcome to Carshop" label="Services" />
 
         <div className="mt-10">
           <dl className="space-y-10 md:space-y-0 md:grid md:grid-cols-2 md:gap-x-8 md:gap-y-10">
