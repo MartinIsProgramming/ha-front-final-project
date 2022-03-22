@@ -15,23 +15,18 @@ const Navigation = () => {
       {({ open }) => (
         <>
           <div className="px-2 mx-auto max-w-7xl sm:px-6 lg:px-8">
-            <div className="relative flex items-center justify-between h-16">
-              <div className="flex items-center justify-start flex-1 sm:items-stretch sm:justify-between">
-                <div className="flex items-center flex-shrink-0">
-                  <Link href="/">
-                    <a className="text-2xl text-brand-dark">CARSHOP</a>
-                  </Link>
-                </div>
-                <div className="hidden sm:block sm:ml-6">
-                  <div className="flex space-x-4">
-                    {navigation.map(link => (
-                      <CustomNavLink key={link.name} link={link} />
-                    ))}
-                  </div>
-                </div>
+            <div className="flex items-center justify-between h-16">
+              <Link href="/">
+                <a className="text-2xl text-brand-dark">CARSHOP</a>
+              </Link>
+              <div className="hidden space-x-2 sm:flex">
+                {navigation.map(link => (
+                  <CustomNavLink key={link.name} link={link} />
+                ))}
               </div>
-              <div className="flex items-center sm:hidden">
-                <Disclosure.Button className="inline-flex items-center justify-center p-2 rounded-md text-brand-dark">
+
+              <div className="sm:hidden">
+                <Disclosure.Button className="p-2 rounded-md focus:outline-none text-brand-dark">
                   <span className="sr-only">Open main menu</span>
                   {open ? (
                     <XIcon className="block w-6 h-6" aria-hidden="true" />
@@ -56,7 +51,7 @@ const Navigation = () => {
           >
             <Disclosure.Panel className="sm:hidden">
               {({ close }) => (
-                <div className="px-2 pt-2 pb-3 space-y-1">
+                <div className="px-2 py-2">
                   {navigation.map(link => (
                     <CustomNavLink
                       key={link.name}

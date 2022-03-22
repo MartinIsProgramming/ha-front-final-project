@@ -8,7 +8,9 @@ const CustomNavLink = ({ link, isMobile, close }) => {
     ? 'block px-3 py-2 rounded-md text-base font-medium'
     : 'px-3 py-2 rounded-md text-sm font-medium';
 
-  const className = isCurrent ? 'bg-brand-dark text-gray-100' : 'text-gray-700';
+  const className = isCurrent
+    ? 'bg-brand-dark text-gray-100'
+    : 'text-gray-700 hover:text-brand-dark';
 
   return (
     <Link href={link.href} key={link.name}>

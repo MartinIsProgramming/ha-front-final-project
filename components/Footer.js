@@ -9,7 +9,7 @@ const navigation = [
 const Footer = () => {
   return (
     <footer className="bg-brand-dark">
-      <div className="flex flex-col items-center py-12 mx-auto space-y-4 max-w-7xl">
+      <div className="flex flex-col items-center max-w-6xl py-12 mx-auto space-y-4">
         <Link href="/">
           <a className="text-2xl text-gray-100">CARSHOP</a>
         </Link>
