@@ -1,11 +1,25 @@
+import { useCarsContext } from '../context/CarsContext';
 import Image from 'next/image';
 import StandardBtn from './shared/StandardBtn';
 import Rating from './Rating';
 
 const Car = ({ car }) => {
+  const { inDollars } = useCarsContext();
+
   const renderNewBadge = car.status === 1 && (
     <span className="absolute px-2 py-1 text-xs font-medium text-gray-100 rounded-md top-3 left-2 bg-brand-orange">
       new
+    </span>
+  );
+
+  const calculatePrice = price =>
+    price.toLocaleString({ maximumFractionDigits: 2 });
+
+  const price = (
+    <span>
+      {inDollars
+        ? `USD ${calculatePrice(car.price_usd)}`
+        : `$ ${calculatePrice(car.price_uyu)}`}
     </span>
   );
 
@@ -28,9 +42,7 @@ const Car = ({ car }) => {
         </h3>
         <div className="flex items-center space-x-1 text-primary-brand-light">
           <span>{car.year} |</span>
-          <span>
-            USD {car.price_usd.toLocaleString({ maximumFractionDigits: 2 })} |
-          </span>
+          {price}
           <Rating rating={car.rating} />
         </div>
       </div>
