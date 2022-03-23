@@ -3,7 +3,7 @@ import StandardBtn from './shared/StandardBtn';
 
 const Filter = () => {
   return (
-    <div className="px-3 pt-3 pb-8 bg-gray-100 rounded-md">
+    <div className="sticky px-3 pt-3 pb-8 bg-gray-100 rounded-md top-4 max-h-96">
       <h3 className="mb-2 text-lg font-semibold border-b-2 text-primary-brand-dark">
         Filter
       </h3>
