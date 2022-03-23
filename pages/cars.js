@@ -21,7 +21,7 @@ const CarsPage = ({ carsData }) => {
 export default CarsPage;
 
 export const getStaticProps = async () => {
-  const res = await fetch('https://ha.edu.uy/api/cars');
+  const res = await fetch(process.env.CARS_API);
   const carsData = await res.json();
 
   return {
