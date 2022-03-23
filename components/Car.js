@@ -3,7 +3,6 @@ import StandardBtn from './shared/StandardBtn';
 import Rating from './Rating';
 
 const Car = ({ car }) => {
-  console.log(car.rating);
   return (
     <div className="lg:max-w-3xl">
       <div className="relative w-full h-56 overflow-hidden rounded-lg aspect-w-1 aspect-h-1 xl:aspect-w-7 xl:aspect-h-8 lg:w-2/3 lg:h-64">
