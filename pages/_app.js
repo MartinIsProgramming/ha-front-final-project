@@ -1,12 +1,15 @@
 import '../styles/globals.css';
 import Navigation from '../components/Navigation';
 import Footer from '../components/Footer';
+import { CarsProvider } from '../context/CarsContext';
 
 function MyApp({ Component, pageProps }) {
   return (
     <>
       <Navigation />
-      <Component {...pageProps} />
+      <CarsProvider>
+        <Component {...pageProps} />
+      </CarsProvider>
       <Footer />
     </>
   );
