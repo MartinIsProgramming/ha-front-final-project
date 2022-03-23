@@ -6,11 +6,11 @@ const Rating = ({ rating }) => {
   arr.fill(1, 0, rating);
 
   const generateStars = () =>
-    arr.map(el =>
+    arr.map((el, i) =>
       el === 1 ? (
-        <FullStar className="w-5 h-5 text-yellow-400" />
+        <FullStar key={i} className="w-5 h-5 text-yellow-400" />
       ) : (
-        <EmptyStar className="w-4 h-4" />
+        <EmptyStar key={i} className="w-4 h-4" />
       )
     );
 
