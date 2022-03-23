@@ -2,7 +2,7 @@ import Filter from '../components/Filter';
 import SectionTitle from '../components/shared/SectionTitle';
 import Car from '../components/Car';
 
-const CarsPage = ({ carsData }) => {
+const CarsPage = ({ carsData, ratesData }) => {
   return (
     <section className="px-4 py-12 mx-auto sm:py-20 sm:px-6 lg:px-8 max-w-7xl">
       <SectionTitle title="Search your car" label="collection" />
@@ -21,12 +21,15 @@ const CarsPage = ({ carsData }) => {
 export default CarsPage;
 
 export const getStaticProps = async () => {
-  const res = await fetch(process.env.CARS_API);
-  const carsData = await res.json();
+  const [carsDataRes, ratesDataRes] = await Promise.all([
+    fetch(process.env.CARS_API),
+    fetch(process.env.RATES_API),
+  ]);
 
-  return {
-    props: {
-      carsData,
-    },
-  };
+  const [carsData, ratesData] = await Promise.all([
+    carsDataRes.json(),
+    ratesDataRes.json(),
+  ]);
+
+  return { props: { carsData, ratesData } };
 };
