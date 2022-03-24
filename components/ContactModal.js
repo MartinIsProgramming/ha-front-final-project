@@ -42,12 +42,12 @@ const ContactModal = ({ isOpen, closeModal }) => {
               <div className="inline-block w-full max-w-md p-6 my-8 overflow-hidden text-left align-middle transition-all transform bg-white shadow-xl rounded-2xl">
                 <Dialog.Title
                   as="h3"
-                  className="flex items-center text-lg font-medium leading-6 text-gray-900"
+                  className="flex items-center justify-center text-lg font-medium leading-6 text-gray-900 sm:justify-start"
                 >
                   <InformationCircleIcon className="w-5 h-5 mr-1 text-red-600" />
                   App information
                 </Dialog.Title>
-                <Dialog.Description className="mt-2">
+                <Dialog.Description className="mt-2 text-center sm:text-left">
                   <p className="text-sm text-gray-500">
                     Remember that our developer created this app as a DEMO to
                     help students achieve the main functionality of their final
@@ -55,10 +55,10 @@ const ContactModal = ({ isOpen, closeModal }) => {
                   </p>
                 </Dialog.Description>
 
-                <div className="mt-4 space-x-3">
+                <div className="mt-4 space-y-3 sm:flex sm:space-y-0 sm:space-x-4">
                   <button
                     type="button"
-                    className="inline-flex justify-center px-4 py-2 text-sm font-medium border border-transparent rounded-md bg-secondary-brand-dark text-primary-brand-light hover:bg-secondary-brand-light focus:outline-none focus-visible:ring-2 focus-visible:ring-offset-2 focus-visible:ring-primary-brand-dark"
+                    className="block w-full px-4 py-2 text-sm font-medium border border-transparent rounded-md bg-secondary-brand-dark text-primary-brand-light hover:bg-secondary-brand-light focus:outline-none focus-visible:ring-2 focus-visible:ring-offset-2 focus-visible:ring-primary-brand-dark"
                     onClick={closeModal}
                   >
                     Got it, thanks!
@@ -68,7 +68,7 @@ const ContactModal = ({ isOpen, closeModal }) => {
                     href="https://github.com/MartinIsProgramming"
                     target="_blank"
                     rel="noreferrer"
-                    className="inline-flex justify-center px-4 py-2 text-sm font-medium text-gray-100 border border-transparent rounded-md bg-primary-brand-dark hover:bg-primary-brand-light focus:outline-none focus-visible:ring-2 focus-visible:ring-offset-2 focus-visible:ring-primary-brand-dark"
+                    className="block w-full px-4 py-2 text-sm font-medium text-center text-gray-100 border border-transparent rounded-md bg-primary-brand-dark hover:bg-primary-brand-light focus:outline-none focus-visible:ring-2 focus-visible:ring-offset-2 focus-visible:ring-primary-brand-dark"
                   >
                     Meet the dev!
                   </a>
