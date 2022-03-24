@@ -1,6 +1,7 @@
 import { Dialog, Transition } from '@headlessui/react';
 import { InformationCircleIcon } from '@heroicons/react/outline';
 import { Fragment } from 'react';
+import StandardBtn from './shared/StandardBtn';
 
 const ContactModal = ({ isOpen, closeModal }) => {
   return (
@@ -56,22 +57,14 @@ const ContactModal = ({ isOpen, closeModal }) => {
                 </Dialog.Description>
 
                 <div className="mt-4 space-y-3 sm:flex sm:space-y-0 sm:space-x-4">
-                  <button
-                    type="button"
-                    className="block w-full px-4 py-2 text-sm font-medium border border-transparent rounded-md bg-secondary-brand-dark text-primary-brand-light hover:bg-secondary-brand-light focus:outline-none focus-visible:ring-2 focus-visible:ring-offset-2 focus-visible:ring-primary-brand-dark"
-                    onClick={closeModal}
-                  >
-                    Got it, thanks!
-                  </button>
-
-                  <a
+                  <StandardBtn text="Got it, thanks!" onClick={closeModal} />
+                  <StandardBtn
+                    text="Meet the dev!"
                     href="https://github.com/MartinIsProgramming"
-                    target="_blank"
-                    rel="noreferrer"
-                    className="block w-full px-4 py-2 text-sm font-medium text-center text-gray-100 border border-transparent rounded-md bg-primary-brand-dark hover:bg-primary-brand-light focus:outline-none focus-visible:ring-2 focus-visible:ring-offset-2 focus-visible:ring-primary-brand-dark"
-                  >
-                    Meet the dev!
-                  </a>
+                    isSecondary
+                    isExternalLink
+                    customClasses="text-center"
+                  />
                 </div>
               </div>
             </Transition.Child>

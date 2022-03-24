@@ -3,6 +3,7 @@ import Image from 'next/image';
 import { MailIcon } from '@heroicons/react/outline';
 import SectionTitle from '../shared/SectionTitle';
 import ContactModal from '../ContactModal';
+import StandardBtn from '../shared/StandardBtn';
 
 const OurStory = () => {
   const [isOpen, setIsOpen] = useState(false);
@@ -42,14 +43,12 @@ const OurStory = () => {
                 necessitatibus vero tempora, minus voluptatibus ad?
               </p>
             </div>
-
-            <button
-              className="flex items-center justify-center px-4 py-2 text-sm rounded-md bg-secondary-brand-light hover:bg-secondary-brand-dark text-primary-brand-dark"
+            <StandardBtn
+              text="contact"
               onClick={openModal}
-            >
-              <MailIcon className="w-4 h-4 mr-1" aria-hidden="true" />
-              contact
-            </button>
+              customClasses="w-24 flex items-center justify-center font-normal"
+              icon={<MailIcon className="w-4 h-4 mr-1" aria-hidden="true" />}
+            />
           </div>
         </div>
       </section>

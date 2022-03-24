@@ -27,7 +27,7 @@ const Filter = ({
           onChange={handleModelChange}
         />
       </div>
-      <div className="space-y-3">
+      <div className="mt-6 space-y-3">
         <StandardBtn text="find my car" onClick={handleFilter} />
         <StandardBtn
           text="change to pesos"
