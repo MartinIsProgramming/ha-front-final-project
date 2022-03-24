@@ -1,11 +1,8 @@
 import Image from 'next/image';
 import StandardBtn from './shared/StandardBtn';
 import Rating from './Rating';
-import { useCarsContext } from '../context/CarsContext';
 
-const Cars = ({ carsData }) => {
-  const { inDollars } = useCarsContext();
-
+const Cars = ({ carsData, inDollars }) => {
   const calculatePrice = price =>
     price.toLocaleString({ maximumFractionDigits: 2 });
 

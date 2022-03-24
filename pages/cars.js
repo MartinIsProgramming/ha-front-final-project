@@ -1,11 +1,11 @@
-import { useState } from 'react';
+import { useState, useCallback } from 'react';
 import Filter from '../components/Filter';
 import SectionTitle from '../components/shared/SectionTitle';
 import Cars from '../components/Cars';
-import { CarsProvider } from '../context/CarsContext';
 
 const CarsPage = ({ carsData }) => {
   const [filteredCars, setFilteredCars] = useState(carsData);
+  const [inDollars, setInDollars] = useState(true);
 
   console.log(filteredCars);
 
@@ -42,21 +42,25 @@ const CarsPage = ({ carsData }) => {
   };
   const handleResetFilters = () => setFilteredCars(carsData);
 
+  const handlePriceCurrency = useCallback(
+    () => setInDollars(!inDollars),
+    [inDollars]
+  );
+
   return (
     <section className="px-4 py-12 mx-auto sm:py-20 sm:px-6 lg:px-8 max-w-7xl">
       <SectionTitle title="Search your car" label="collection" />
       <div className="grid mt-4 gap-y-6 md:grid-cols-3 lg:grid-cols-4 md:gap-x-4">
-        <CarsProvider>
-          <Filter
-            brandOptions={brandOptions}
-            modelOptions={modelOptions}
-            handleBrandChange={handleBrandChange}
-            handleModelChange={handleModelChange}
-            handleFilter={handleFilter}
-            handleResetFilters={handleResetFilters}
-          />
-          <Cars carsData={filteredCars} />
-        </CarsProvider>
+        <Filter
+          brandOptions={brandOptions}
+          modelOptions={modelOptions}
+          handleBrandChange={handleBrandChange}
+          handleModelChange={handleModelChange}
+          handleFilter={handleFilter}
+          handleResetFilters={handleResetFilters}
+          handlePriceCurrency={handlePriceCurrency}
+        />
+        <Cars carsData={filteredCars} inDollars={inDollars} />
       </div>
     </section>
   );
