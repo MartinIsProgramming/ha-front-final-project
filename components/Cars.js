@@ -3,15 +3,15 @@ import StandardBtn from './shared/StandardBtn';
 import Rating from './Rating';
 import { useCarsContext } from '../context/CarsContext';
 
-const Cars = () => {
-  const { data, inDollars } = useCarsContext();
+const Cars = ({ carsData }) => {
+  const { inDollars } = useCarsContext();
 
   const calculatePrice = price =>
     price.toLocaleString({ maximumFractionDigits: 2 });
 
   return (
     <div className="space-y-12 md:col-span-2 lg:col-span-3">
-      {data.map((car, i) => (
+      {carsData.map((car, i) => (
         <div key={i} className="lg:max-w-3xl">
           <div className="relative w-full h-56 overflow-hidden rounded-lg aspect-w-1 aspect-h-1 xl:aspect-w-7 xl:aspect-h-8 lg:w-2/3 lg:h-64">
             <Image
