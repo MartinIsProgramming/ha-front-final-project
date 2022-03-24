@@ -1,5 +1,5 @@
 import Image from 'next/image';
-import SectionTitle from './shared/SectionTitle';
+import SectionTitle from '../shared/SectionTitle';
 
 const founders = [
   {

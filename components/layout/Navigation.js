@@ -1,7 +1,7 @@
 import { Disclosure, Transition } from '@headlessui/react';
 import { MenuAlt1Icon, XIcon } from '@heroicons/react/outline';
 import Link from 'next/link';
-import CustomNavLink from './shared/CustomNavLink';
+import CustomNavLink from '../shared/CustomNavLink';
 
 const navigation = [
   { name: 'home', href: '/', current: false },

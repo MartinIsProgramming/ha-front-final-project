@@ -1,5 +1,5 @@
-import Founders from '../components/Founders';
-import OurStory from '../components/OurStory';
+import Founders from '../components/about/Founders';
+import OurStory from '../components/about/OurStory';
 
 const AboutPage = () => {
   return (

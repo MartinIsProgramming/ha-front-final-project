@@ -1,8 +1,8 @@
 import { useState } from 'react';
 import Image from 'next/image';
 import { MailIcon } from '@heroicons/react/outline';
-import SectionTitle from './shared/SectionTitle';
-import ContactModal from './ContactModal';
+import SectionTitle from '../shared/SectionTitle';
+import ContactModal from '../ContactModal';
 
 const OurStory = () => {
   const [isOpen, setIsOpen] = useState(false);
