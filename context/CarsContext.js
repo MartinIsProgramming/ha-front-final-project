@@ -4,13 +4,13 @@ const CarsContext = createContext();
 
 const useCarsContext = () => useContext(CarsContext);
 
-const CarsProvider = ({ children }) => {
+const CarsProvider = ({ data, children }) => {
   const [inDollars, setInDollars] = useState(true);
 
   const handlePriceCurrency = () => setInDollars(!inDollars);
 
   return (
-    <CarsContext.Provider value={{ inDollars, handlePriceCurrency }}>
+    <CarsContext.Provider value={{ data, inDollars, handlePriceCurrency }}>
       {children}
     </CarsContext.Provider>
   );
