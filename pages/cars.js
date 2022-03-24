@@ -7,8 +7,6 @@ const CarsPage = ({ carsData }) => {
   const [filteredCars, setFilteredCars] = useState(carsData);
   const [inDollars, setInDollars] = useState(true);
 
-  console.log(filteredCars);
-
   const [brandOptions, setBrandOptions] = useState([
     ...new Set(carsData.map(car => car.brand)),
   ]);
@@ -23,9 +21,11 @@ const CarsPage = ({ carsData }) => {
     const newBrand = e.target.value;
     setBrand(newBrand);
 
-    let modelsFiltered = carsData
-      .filter(car => car.brand === newBrand)
-      .map(car => car.model);
+    const modelsFiltered = [
+      ...new Set(
+        carsData.filter(car => car.brand === newBrand).map(car => car.model)
+      ),
+    ];
 
     setModelOptions(modelsFiltered);
     setModel(modelsFiltered[0]);
