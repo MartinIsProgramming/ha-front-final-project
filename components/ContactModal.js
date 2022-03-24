@@ -9,7 +9,7 @@ const ContactModal = ({ isOpen, closeModal }) => {
       <Transition appear show={isOpen} as={Fragment}>
         <Dialog
           as="div"
-          className="fixed inset-0 z-10 overflow-y-auto"
+          className="fixed inset-0 z-10 overflow-y-auto top-52"
           onClose={closeModal}
         >
           <Dialog.Overlay className="fixed inset-0 bg-black opacity-70" />
@@ -25,11 +25,6 @@ const ContactModal = ({ isOpen, closeModal }) => {
             >
               <Dialog.Overlay className="fixed inset-0" />
             </Transition.Child>
-
-            <span
-              className="inline-block h-screen align-middle"
-              aria-hidden="true"
-            />
 
             <Transition.Child
               as={Fragment}
