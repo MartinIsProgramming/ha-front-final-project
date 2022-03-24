@@ -1,25 +1,25 @@
-const FormGroup = ({ labelText }) => {
+const FormGroup = ({ labelText, options, onChange }) => {
   return (
-    <div>
+    <>
       <label
-        htmlFor="Brands"
-        className="block mb-2 text-sm font-medium text-primary-brand-light"
+        htmlFor={labelText}
+        className="block text-sm font-medium text-primary-brand-light"
       >
         {labelText}
       </label>
       <select
         type="text"
-        name="brands"
-        id="brands"
-        placeholder="brands.."
+        name={labelText}
+        id={labelText}
+        placeholder={`${labelText}...`}
         className="w-full rounded-md text-primary-brand-light border-secondary-brand-light focus:outline-none focus:ring-brand-orange focus:border-brand-orange sm:text-sm"
+        onChange={onChange}
       >
-        <option>Please select</option>
-        <option>Please select</option>
-        <option>Please select</option>
-        <option>Please select</option>
+        {options.map((item, i) => (
+          <option key={i}>{item}</option>
+        ))}
       </select>
-    </div>
+    </>
   );
 };
 
