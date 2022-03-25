@@ -1,4 +1,5 @@
 import Link from 'next/link';
+import propTypes from 'prop-types';
 import useCheckActiveLink from '../../hooks/useCheckCurrentLink';
 
 const CustomNavLink = ({ link, close }) => {
@@ -22,6 +23,11 @@ const CustomNavLink = ({ link, close }) => {
       </a>
     </Link>
   );
+};
+
+CustomNavLink.propTypes = {
+  link: propTypes.object.isRequired,
+  close: propTypes.func,
 };
 
 export default CustomNavLink;
