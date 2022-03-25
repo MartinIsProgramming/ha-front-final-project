@@ -13,7 +13,7 @@ const HeroSection = () => {
       </p>
 
       <div className="mx-auto mt-5 space-y-2 sm:space-x-4 sm:space-y-0 sm:max-w-md md:max-w-xl sm:mt-8 sm:flex sm:justify-center">
-        <CallToActionLink href="/about" text="Know more" />
+        <CallToActionLink href="/about" text="know more" />
         <CallToActionLink
           href="https://github.com/MartinIsProgramming"
           text="developer"
