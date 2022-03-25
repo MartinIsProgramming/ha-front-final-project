@@ -1,7 +1,7 @@
 import { Disclosure, Transition } from '@headlessui/react';
 import { MenuAlt1Icon, XIcon } from '@heroicons/react/outline';
-import Link from 'next/link';
 import CustomNavLink from '../shared/CustomNavLink';
+import Logo from '../shared/Logo';
 
 const navigation = [
   { name: 'home', href: '/', current: false },
@@ -16,17 +16,12 @@ const Navigation = () => {
         <>
           <div className="px-4 mx-auto max-w-7xl sm:px-6 lg:px-8">
             <div className="flex items-center justify-between h-16">
-              <Link href="/">
-                <a className="text-2xl rounded text-primary-brand-dark">
-                  CARSHOP
-                </a>
-              </Link>
+              <Logo />
               <div className="hidden space-x-2 sm:flex">
                 {navigation.map(link => (
                   <CustomNavLink key={link.name} link={link} />
                 ))}
               </div>
-
               <div className="sm:hidden">
                 <Disclosure.Button className="p-2 rounded-md focus:outline-none text-primary-brand-dark">
                   <span className="sr-only">Open main menu</span>

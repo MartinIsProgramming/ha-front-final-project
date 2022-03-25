@@ -1,4 +1,5 @@
 import Link from 'next/link';
+import Logo from '../shared/Logo';
 
 const navigation = [
   { label: 'home', href: '/' },
@@ -10,9 +11,7 @@ const Footer = () => {
   return (
     <footer className="border-t-2 bg-primary-brand-dark border-brand-orange">
       <div className="flex flex-col items-center max-w-6xl py-12 mx-auto space-y-4 sm:py-20">
-        <Link href="/">
-          <a className="text-2xl text-gray-100 rounded">CARSHOP</a>
-        </Link>
+        <Logo isLight />
         <div className="flex items-center justify-center">
           {navigation.map(({ label, href }) => (
             <Link key={label} href={href}>
