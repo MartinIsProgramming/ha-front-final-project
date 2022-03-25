@@ -30,6 +30,11 @@ const CallToActionLink = ({
   );
 };
 
+CallToActionLink.defaultProps = {
+  isSecondary: false,
+  isExternalLink: false,
+};
+
 CallToActionLink.propTypes = {
   href: PropTypes.string.isRequired,
   isSecondary: PropTypes.bool,
