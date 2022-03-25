@@ -2,6 +2,7 @@ import Filter from '../components/Filter';
 import SectionTitle from '../components/shared/SectionTitle';
 import Cars from '../components/Cars';
 import useFilterCars from '../hooks/useFilterCars';
+import propTypes from 'prop-types';
 
 const CarsPage = ({ carsData }) => {
   const [
@@ -33,6 +34,10 @@ const CarsPage = ({ carsData }) => {
       </div>
     </section>
   );
+};
+
+CarsPage.propTypes = {
+  carsData: propTypes.array.isRequired,
 };
 
 export default CarsPage;
