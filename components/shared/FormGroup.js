@@ -1,3 +1,5 @@
+import propTypes from 'prop-types';
+
 const FormGroup = ({ labelText, options, onChange }) => {
   return (
     <>
@@ -21,6 +23,12 @@ const FormGroup = ({ labelText, options, onChange }) => {
       </select>
     </>
   );
+};
+
+FormGroup.propTypes = {
+  labelText: propTypes.string.isRequired,
+  options: propTypes.array.isRequired,
+  onChange: propTypes.func.isRequired,
 };
 
 export default FormGroup;
