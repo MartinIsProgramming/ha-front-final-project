@@ -1,4 +1,4 @@
-import CallToActionBtn from '../shared/CallToActionBtn';
+import CallToActionLink from '../shared/CallToActionLink';
 
 const AreYouReady = () => {
   return (
@@ -10,7 +10,7 @@ const AreYouReady = () => {
         </span>
       </h2>
       <div className="flex lg:block">
-        <CallToActionBtn href="/cars" text="Get started" />
+        <CallToActionLink href="/cars" text="Get started" />
       </div>
     </section>
   );

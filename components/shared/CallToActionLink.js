@@ -1,9 +1,10 @@
 import Link from 'next/link';
+import PropTypes from 'prop-types';
 
-const CallToActionBtn = ({
+const CallToActionLink = ({
+  text,
   href,
   isSecondary,
-  text,
   isExternalLink,
   customClasses,
 }) => {
@@ -29,4 +30,12 @@ const CallToActionBtn = ({
   );
 };
 
-export default CallToActionBtn;
+CallToActionLink.propTypes = {
+  href: PropTypes.string.isRequired,
+  isSecondary: PropTypes.bool,
+  text: PropTypes.string.isRequired,
+  isExternalLink: PropTypes.bool,
+  customClasses: PropTypes.string,
+};
+
+export default CallToActionLink;

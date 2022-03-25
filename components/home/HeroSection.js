@@ -1,4 +1,4 @@
-import CallToActionBtn from '../shared/CallToActionBtn';
+import CallToActionLink from '../shared/CallToActionLink';
 
 const HeroSection = () => {
   return (
@@ -13,8 +13,8 @@ const HeroSection = () => {
       </p>
 
       <div className="mx-auto mt-5 space-y-2 sm:space-x-4 sm:space-y-0 sm:max-w-md md:max-w-xl sm:mt-8 sm:flex sm:justify-center">
-        <CallToActionBtn href="/about" text="Know more" />
-        <CallToActionBtn
+        <CallToActionLink href="/about" text="Know more" />
+        <CallToActionLink
           href="https://github.com/MartinIsProgramming"
           text="developer"
           isSecondary
