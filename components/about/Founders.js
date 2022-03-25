@@ -32,8 +32,8 @@ const founders = [
 ];
 
 const founder = person => (
-  <div key={person.id} className="group">
-    <div className="relative w-full overflow-hidden rounded-lg h-72 aspect-w-1 aspect-h-1 xl:aspect-w-7 xl:aspect-h-8">
+  <div key={person.id}>
+    <div className="relative overflow-hidden rounded-lg h-72">
       <Image
         src={person.imageSrc}
         alt={person.imageAlt}

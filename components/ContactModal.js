@@ -52,13 +52,16 @@ const ContactModal = ({ isOpen, closeModal }) => {
                 </Dialog.Description>
 
                 <div className="mt-4 space-y-3 sm:flex sm:space-y-0 sm:space-x-4">
-                  <StandardBtn text="Got it, thanks!" onClick={closeModal} />
+                  <StandardBtn
+                    text="Got it, thanks!"
+                    onClick={closeModal}
+                    customClasses="w-full sm:w-auto"
+                  />
                   <StandardBtn
                     text="Meet the dev!"
                     href="https://github.com/MartinIsProgramming"
                     isSecondary
                     isExternalLink
-                    customClasses="text-center"
                   />
                 </div>
               </div>

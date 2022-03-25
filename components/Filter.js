@@ -27,14 +27,23 @@ const Filter = ({
           onChange={handleModelChange}
         />
       </div>
-      <div className="mt-6 space-y-3">
-        <StandardBtn text="find my car" onClick={handleFilter} />
+      <div className="mt-6 space-y-3 ">
+        <StandardBtn
+          text="find my car"
+          onClick={handleFilter}
+          customClasses="w-full"
+        />
         <StandardBtn
           text="change to pesos"
           isSecondary
           onClick={handlePriceCurrency}
+          customClasses="w-full"
         />
-        <StandardBtn text="all cars" onClick={handleResetFilters} />
+        <StandardBtn
+          text="all cars"
+          onClick={handleResetFilters}
+          customClasses="w-full"
+        />
       </div>
     </div>
   );

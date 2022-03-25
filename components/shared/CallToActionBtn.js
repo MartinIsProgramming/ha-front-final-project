@@ -1,8 +1,13 @@
 import Link from 'next/link';
 
-const CallToActionBtn = ({ href, isSecondary, text, isExternalLink }) => {
-  const baseStyles =
-    'flex items-center justify-center w-full px-8 py-3 text-base font-medium border border-transparent rounded-md md:py-4 md:text-lg md:px-10';
+const CallToActionBtn = ({
+  href,
+  isSecondary,
+  text,
+  isExternalLink,
+  customClasses,
+}) => {
+  const baseStyles = `flex items-center justify-center px-8 py-3 text-base font-medium rounded md:py-4 md:text-lg md:px-10 ${customClasses}`;
 
   const classNames = isSecondary
     ? 'text-primary-brand-dark bg-secondary-brand-light hover:bg-secondary-brand-dark'

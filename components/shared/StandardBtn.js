@@ -7,11 +7,11 @@ const StandardBtn = ({
   isExternalLink,
   href,
 }) => {
-  const baseStyles = `block w-full py-2 text-sm font-medium rounded-md shadow-sm focus:outline-none focus:ring-2 focus:ring-offset-2 ${customClasses}`;
+  const baseStyles = `flex items-center justify-center py-2 px-4 text-sm font-medium rounded focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-primary-brand-light ${customClasses}`;
 
   const classNames = isSecondary
-    ? 'text-primary-brand-dark bg-secondary-brand-dark hover:bg-secondary-brand-light focus:ring-primary-brand-light'
-    : 'text-gray-100  bg-primary-brand-dark hover:bg-primary-brand-light focus:ring-primary-brand-light';
+    ? 'text-primary-brand-dark bg-secondary-brand-dark hover:bg-secondary-brand-light '
+    : 'text-gray-100 bg-primary-brand-dark hover:bg-primary-brand-light';
 
   return isExternalLink ? (
     <a

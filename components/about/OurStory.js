@@ -1,6 +1,7 @@
 import { useState } from 'react';
-import Image from 'next/image';
 import { MailIcon } from '@heroicons/react/outline';
+import Image from 'next/image';
+
 import SectionTitle from '../shared/SectionTitle';
 import ContactModal from '../ContactModal';
 import StandardBtn from '../shared/StandardBtn';
@@ -16,7 +17,7 @@ const OurStory = () => {
       <section className="px-4 py-12 mx-auto sm:py-20 sm:px-6 max-w-7xl lg:px-8">
         <SectionTitle title="Our Story" label="Background" />
         <div className="grid grid-cols-1 mt-8 gap-y-6 sm:grid-cols-2 gap-x-6 xl:gap-x-8">
-          <div className="relative w-full overflow-hidden rounded-lg h-72 aspect-w-1 aspect-h-1 xl:aspect-w-7 xl:aspect-h-8">
+          <div className="relative w-full overflow-hidden rounded-lg h-72">
             <Image
               src="/images/about.jpg"
               alt="some text"
@@ -46,7 +47,6 @@ const OurStory = () => {
             <StandardBtn
               text="contact"
               onClick={openModal}
-              customClasses="w-24 flex items-center justify-center font-normal"
               icon={<MailIcon className="w-4 h-4 mr-1" aria-hidden="true" />}
             />
           </div>
