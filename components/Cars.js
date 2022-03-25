@@ -53,24 +53,20 @@ const Cars = ({ carsData, inDollars }) => {
   );
 };
 
-Cars.defaultProps = {
-  inDollars: true,
-};
-
 Cars.propTypes = {
   carsData: propTypes.arrayOf(
     propTypes.shape({
-      brand: propTypes.string.isRequired,
-      description: propTypes.string.isRequired,
-      image: propTypes.string.isRequired,
-      model: propTypes.string.isRequired,
-      price_usd: propTypes.number.isRequired,
-      price_uyu: propTypes.number.isRequired,
-      rating: propTypes.number.isRequired,
-      status: propTypes.number.isRequired,
-      year: propTypes.number.isRequired,
+      brand: propTypes.string,
+      description: propTypes.string,
+      image: propTypes.string,
+      model: propTypes.string,
+      price_usd: propTypes.number,
+      price_uyu: propTypes.number,
+      rating: propTypes.number,
+      status: propTypes.number,
+      year: propTypes.number,
     }).isRequired
-  ),
+  ).isRequired,
   inDollars: propTypes.bool.isRequired,
 };
 
