@@ -1,11 +1,14 @@
+import propTypes from 'prop-types';
+
 const StandardBtn = ({
   text,
-  isSecondary,
+  type,
   onClick,
-  customClasses,
+  isSecondary,
   icon,
   isExternalLink,
   href,
+  customClasses,
 }) => {
   const baseStyles = `flex items-center justify-center py-2 px-4 text-sm font-medium rounded ${customClasses}`;
 
@@ -24,7 +27,7 @@ const StandardBtn = ({
     </a>
   ) : (
     <button
-      type="button"
+      type={type}
       className={`${baseStyles} ${classNames}`}
       onClick={onClick}
     >
@@ -32,6 +35,23 @@ const StandardBtn = ({
       {text}
     </button>
   );
+};
+
+StandardBtn.defaultProps = {
+  type: 'button',
+  isSecondary: false,
+  isExternalLink: false,
+};
+
+StandardBtn.propTypes = {
+  text: propTypes.string.isRequired,
+  type: propTypes.oneOf(['submit', 'button', 'reset']),
+  isSecondary: propTypes.bool,
+  icon: propTypes.element,
+  onclick: propTypes.func,
+  customClasses: propTypes.string,
+  isExternalLink: propTypes.bool,
+  href: propTypes.string,
 };
 
 export default StandardBtn;
