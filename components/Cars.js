@@ -1,6 +1,7 @@
 import Image from 'next/image';
 import StandardBtn from './shared/StandardBtn';
 import Rating from './Rating';
+import propTypes from 'prop-types';
 
 const Cars = ({ carsData, inDollars }) => {
   const calculatePrice = price =>
@@ -50,6 +51,27 @@ const Cars = ({ carsData, inDollars }) => {
       ))}
     </div>
   );
+};
+
+Cars.defaultProps = {
+  inDollars: true,
+};
+
+Cars.propTypes = {
+  carsData: propTypes.arrayOf(
+    propTypes.shape({
+      brand: propTypes.string.isRequired,
+      description: propTypes.string.isRequired,
+      image: propTypes.string.isRequired,
+      model: propTypes.string.isRequired,
+      price_usd: propTypes.number.isRequired,
+      price_uyu: propTypes.number.isRequired,
+      rating: propTypes.number.isRequired,
+      status: propTypes.number.isRequired,
+      year: propTypes.number.isRequired,
+    }).isRequired
+  ),
+  inDollars: propTypes.bool.isRequired,
 };
 
 export default Cars;
