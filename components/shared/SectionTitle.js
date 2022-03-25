@@ -1,3 +1,5 @@
+import propTypes from 'prop-types';
+
 const SectionTitle = ({ title, label }) => {
   return (
     <>
@@ -9,6 +11,16 @@ const SectionTitle = ({ title, label }) => {
       </p>
     </>
   );
+};
+
+SectionTitle.defaultProps = {
+  title: 'Default title',
+  label: 'Default label',
+};
+
+SectionTitle.propTypes = {
+  title: propTypes.string.isRequired,
+  label: propTypes.string.isRequired,
 };
 
 export default SectionTitle;
