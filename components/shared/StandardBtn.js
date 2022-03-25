@@ -7,7 +7,7 @@ const StandardBtn = ({
   isExternalLink,
   href,
 }) => {
-  const baseStyles = `flex items-center justify-center py-2 px-4 text-sm font-medium rounded focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-primary-brand-light ${customClasses}`;
+  const baseStyles = `flex items-center justify-center py-2 px-4 text-sm font-medium rounded ${customClasses}`;
 
   const classNames = isSecondary
     ? 'text-primary-brand-dark bg-secondary-brand-dark hover:bg-secondary-brand-light '

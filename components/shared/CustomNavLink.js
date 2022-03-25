@@ -1,21 +1,20 @@
 import Link from 'next/link';
 import useCheckActiveLink from '../../hooks/useCheckCurrentLink';
 
-const CustomNavLink = ({ link, isMobile, close }) => {
+const CustomNavLink = ({ link, close }) => {
   const isCurrent = useCheckActiveLink(link.href, link.current);
 
-  const baseStyles = isMobile
-    ? 'block px-3 py-2 rounded-md text-base font-medium'
-    : 'px-3 py-2 rounded-md text-sm font-medium';
+  const baseStyles =
+    'block px-3 py-2 text-sm rounded-md font-medium focus:outline-none';
 
-  const className = isCurrent
+  const currentStyles = isCurrent
     ? 'bg-primary-brand-dark text-gray-100'
     : 'text-primary-brand-light hover:text-primary-brand-dark';
 
   return (
     <Link href={link.href} key={link.name}>
       <a
-        className={`${baseStyles} ${className}`}
+        className={`${baseStyles} ${currentStyles}`}
         aria-current={isCurrent ? 'page' : undefined}
         onClick={close && close}
       >

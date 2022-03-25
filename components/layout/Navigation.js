@@ -17,7 +17,9 @@ const Navigation = () => {
           <div className="px-4 mx-auto max-w-7xl sm:px-6 lg:px-8">
             <div className="flex items-center justify-between h-16">
               <Link href="/">
-                <a className="text-2xl text-primary-brand-dark">CARSHOP</a>
+                <a className="text-2xl rounded text-primary-brand-dark">
+                  CARSHOP
+                </a>
               </Link>
               <div className="hidden space-x-2 sm:flex">
                 {navigation.map(link => (
@@ -53,12 +55,7 @@ const Navigation = () => {
               {({ close }) => (
                 <div className="px-2 py-2">
                   {navigation.map(link => (
-                    <CustomNavLink
-                      key={link.name}
-                      link={link}
-                      isMobile
-                      close={close}
-                    />
+                    <CustomNavLink key={link.name} link={link} close={close} />
                   ))}
                 </div>
               )}
