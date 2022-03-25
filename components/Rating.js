@@ -1,5 +1,6 @@
 import { StarIcon as FullStar } from '@heroicons/react/solid';
 import { StarIcon as EmptyStar } from '@heroicons/react/outline';
+import propTypes from 'prop-types';
 
 const Rating = ({ rating }) => {
   let arr = [null, null, null, null, null];
@@ -15,6 +16,10 @@ const Rating = ({ rating }) => {
     );
 
   return <span className="flex items-center">{generateStars()}</span>;
+};
+
+Rating.propTypes = {
+  rating: propTypes.number.isRequired,
 };
 
 export default Rating;
