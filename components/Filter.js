@@ -1,3 +1,4 @@
+import propTypes from 'prop-types';
 import FormGroup from './shared/FormGroup';
 import StandardBtn from './shared/StandardBtn';
 
@@ -47,6 +48,16 @@ const Filter = ({
       </div>
     </div>
   );
+};
+
+Filter.propTypes = {
+  brandOptions: propTypes.array.isRequired,
+  modelOptions: propTypes.array.isRequired,
+  handleBrandChange: propTypes.func.isRequired,
+  handleModelChange: propTypes.func.isRequired,
+  handleFilter: propTypes.func.isRequired,
+  handlePriceCurrency: propTypes.func.isRequired,
+  handleResetFilters: propTypes.func.isRequired,
 };
 
 export default Filter;
