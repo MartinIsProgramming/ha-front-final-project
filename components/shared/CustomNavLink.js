@@ -26,7 +26,11 @@ const CustomNavLink = ({ link, close }) => {
 };
 
 CustomNavLink.propTypes = {
-  link: propTypes.object.isRequired,
+  link: propTypes.shape({
+    name: propTypes.string.isRequired,
+    href: propTypes.string.isRequired,
+    current: propTypes.bool.isRequired,
+  }),
   close: propTypes.func,
 };
 
