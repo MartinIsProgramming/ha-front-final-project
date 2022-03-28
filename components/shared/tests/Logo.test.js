@@ -21,8 +21,6 @@ describe('Logo component', () => {
     it('has dark text color as a default', () => {
       expect(linkEl).toHaveClass('text-primary-brand-dark');
     });
-
-    describe('when isLight prop is passed', () => {});
   });
 
   describe('when isLight is passed as prop', () => {

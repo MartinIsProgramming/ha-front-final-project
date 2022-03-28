@@ -2,9 +2,9 @@ import { render, screen } from '@testing-library/react';
 import Services from '../Services';
 
 describe('Services', () => {
-  it('renders the SectionTitle component with correct label and title', () => {
-    render(<Services />);
+  beforeEach(() => render(<Services />));
 
+  it('renders the SectionTitle component with correct label and title', () => {
     const labelEl = screen.getByText(/services/i);
     const headingEl = screen.getByRole('heading', {
       name: /welcome to carshop/i,
@@ -15,8 +15,6 @@ describe('Services', () => {
   });
 
   it('renders the company services', () => {
-    render(<Services />);
-
     const newCarsEl = screen.getByText(/brand new cars/i);
     const usedCarsEl = screen.getByText(/used cars/i);
     const paperWorkEl = screen.getByText(/paper work/i);

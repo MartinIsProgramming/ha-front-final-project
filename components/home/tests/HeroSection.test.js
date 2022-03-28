@@ -2,14 +2,13 @@ import { render, screen, within } from '@testing-library/react';
 import HeroSection from '../HeroSection';
 
 describe('HeroSection', () => {
+  beforeEach(() => render(<HeroSection />));
+
   describe('span elements', () => {
     it('renders the span elements with correct text content ', () => {
-      render(<HeroSection />);
-
       const heading = screen.getByRole('heading', {
         name: /all the power you need\. in your garage\./i,
       });
-
       const firstSpan = within(heading).getByText(/all the power you need\./i);
       const SecondSpan = within(heading).getByText(/In your garage\./i);
 
@@ -20,8 +19,6 @@ describe('HeroSection', () => {
 
   describe('cta links', () => {
     it('renders two links', () => {
-      render(<HeroSection />);
-
       const links = screen.getAllByRole('link');
 
       expect(links).toHaveLength(2);
@@ -29,8 +26,6 @@ describe('HeroSection', () => {
 
     describe('know more link', () => {
       it('has correct text content and href ', () => {
-        render(<HeroSection />);
-
         const knowMoreLink = screen.getByRole('link', {
           name: /know more/i,
         });
@@ -42,8 +37,6 @@ describe('HeroSection', () => {
 
     describe('developer link', () => {
       it('has correct text content and href', () => {
-        render(<HeroSection />);
-
         const developerLink = screen.getByRole('link', {
           name: /developer/i,
         });
