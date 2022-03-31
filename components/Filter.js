@@ -3,6 +3,7 @@ import FormGroup from './shared/FormGroup';
 import StandardBtn from './shared/StandardBtn';
 
 const Filter = ({
+  inDollars,
   brandOptions,
   modelOptions,
   handleBrandChange,
@@ -35,7 +36,7 @@ const Filter = ({
           customClasses="w-full"
         />
         <StandardBtn
-          text="change to pesos"
+          text={`${inDollars ? 'change to pesos' : 'change to dollars'}`}
           isSecondary
           onClick={handlePriceCurrency}
           customClasses="w-full"

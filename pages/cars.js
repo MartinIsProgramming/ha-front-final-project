@@ -22,6 +22,7 @@ const CarsPage = ({ carsData }) => {
       <SectionTitle title="Search your car" label="collection" />
       <div className="grid mt-4 gap-y-6 md:grid-cols-3 lg:grid-cols-4 md:gap-x-4">
         <Filter
+          inDollars={inDollars}
           brandOptions={brandOptions}
           modelOptions={modelOptions}
           handleBrandChange={handleBrandChange}
