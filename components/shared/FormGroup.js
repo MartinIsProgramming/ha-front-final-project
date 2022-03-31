@@ -18,7 +18,9 @@ const FormGroup = ({ labelText, options, onChange }) => {
         onChange={onChange}
       >
         {options.map((item, i) => (
-          <option key={i}>{item}</option>
+          <option value={item} key={i}>
+            {item}
+          </option>
         ))}
       </select>
     </>
