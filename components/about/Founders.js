@@ -32,7 +32,7 @@ const founders = [
 ];
 
 const founder = person => (
-  <div key={person.id}>
+  <div data-testid="founder-element" key={person.id}>
     <div className="relative overflow-hidden rounded-lg h-72">
       <Image
         src={person.imageSrc}
