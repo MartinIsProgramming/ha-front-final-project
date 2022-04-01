@@ -5,24 +5,20 @@ describe('Services', () => {
   beforeEach(() => render(<Services />));
 
   it('renders the SectionTitle component with correct label and title', () => {
-    const labelEl = screen.getByText(/services/i);
-    const headingEl = screen.getByRole('heading', {
-      name: /welcome to carshop/i,
-    });
-
-    expect(labelEl).toHaveTextContent('Services');
-    expect(headingEl).toHaveTextContent('Welcome to Carshop');
+    screen.getByText('Services');
+    screen.getByRole('heading', { name: 'Welcome to Carshop' });
   });
 
   it('renders the company services', () => {
-    const newCarsEl = screen.getByText(/brand new cars/i);
-    const usedCarsEl = screen.getByText(/used cars/i);
-    const paperWorkEl = screen.getByText(/paper work/i);
-    const fastServiceEl = screen.getByText(/fastest service/i);
+    screen.getByText('Brand new cars');
+    screen.getByText('Used cars');
+    screen.getByText('Paper work');
+    screen.getByText('Fastest service');
+  });
 
-    expect(newCarsEl).toHaveTextContent('Brand new cars');
-    expect(usedCarsEl).toHaveTextContent('Used cars');
-    expect(paperWorkEl).toHaveTextContent('Paper work');
-    expect(fastServiceEl).toHaveTextContent('Fastest service');
+  it('renders only four services', () => {
+    const services = screen.getAllByTestId('service-element');
+
+    expect(services).toHaveLength(4);
   });
 });

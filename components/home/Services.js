@@ -42,7 +42,11 @@ const Services = () => {
         <div className="mt-10">
           <dl className="space-y-10 md:space-y-0 md:grid md:grid-cols-2 md:gap-x-8 md:gap-y-10">
             {services.map(feature => (
-              <div key={feature.name} className="relative">
+              <div
+                data-testid="service-element"
+                key={feature.name}
+                className="relative"
+              >
                 <dt>
                   <div className="absolute flex items-center justify-center w-12 h-12 text-white rounded-md bg-brand-orange">
                     <feature.icon className="w-6 h-6" aria-hidden="true" />

@@ -1,52 +1,42 @@
-import { render, screen, within } from '@testing-library/react';
+import { render, screen } from '@testing-library/react';
 import HeroSection from '../HeroSection';
 
 describe('HeroSection', () => {
-  beforeEach(() => render(<HeroSection />));
+  let heading;
 
-  describe('span elements', () => {
-    it('renders the span elements with correct text content ', () => {
-      const heading = screen.getByRole('heading', {
-        name: /all the power you need\. in your garage\./i,
-      });
-      const firstSpan = within(heading).getByText(/all the power you need\./i);
-      const SecondSpan = within(heading).getByText(/In your garage\./i);
+  beforeEach(() => {
+    render(<HeroSection />);
 
-      expect(firstSpan).toHaveTextContent('All the power you need.');
-      expect(SecondSpan).toHaveTextContent('In your garage');
-    });
+    heading = screen.getByRole('heading');
   });
 
-  describe('cta links', () => {
-    it('renders two links', () => {
-      const links = screen.getAllByRole('link');
+  it('renders the heading element', () => {
+    expect(heading).toBeInTheDocument();
+  });
 
-      expect(links).toHaveLength(2);
-    });
+  it('renders only one heading', () => {
+    const heading = screen.getAllByRole('heading');
+    expect(heading).toHaveLength(1);
+  });
 
-    describe('know more link', () => {
-      it('has correct text content and href ', () => {
-        const knowMoreLink = screen.getByRole('link', {
-          name: /know more/i,
-        });
+  it('renders the heading text content', () => {
+    const span1 = screen.getByTestId('first-span');
+    const span2 = screen.getByTestId('second-span');
 
-        expect(knowMoreLink).toHaveTextContent('know more');
-        expect(knowMoreLink).toHaveAttribute('href', '/about');
-      });
-    });
+    expect(span1).toHaveTextContent('All the power you need.');
+    expect(span2).toHaveTextContent('In your garage.');
+  });
 
-    describe('developer link', () => {
-      it('has correct text content and href', () => {
-        const developerLink = screen.getByRole('link', {
-          name: /developer/i,
-        });
+  it('renders two cta links', () => {
+    const ctaLinks = screen.getAllByRole('link');
+    expect(ctaLinks).toHaveLength(2);
+  });
 
-        expect(developerLink).toHaveTextContent('developer');
-        expect(developerLink).toHaveAttribute(
-          'href',
-          'https://github.com/MartinIsProgramming'
-        );
-      });
+  it('renders correct text content for links', () => {
+    const linksText = ['know more', 'developer'];
+
+    linksText.forEach(link => {
+      screen.getByRole('link', { name: link });
     });
   });
 });

@@ -1,31 +1,35 @@
-import { render, screen } from '@testing-library/react';
+import { getAllByRole, render, screen } from '@testing-library/react';
 import AreYouReady from '../AreYouReady';
 
 describe('AreYouReady component', () => {
   beforeEach(() => render(<AreYouReady />));
 
   describe('span elements', () => {
-    it('have correct text content', () => {
-      const firstSpan = screen.getByText(/ready to dive in\?/i);
-      const secondSpan = screen.getByText(
-        /start searching your favorite car\./i
-      );
-
-      expect(firstSpan).toHaveTextContent('Ready to dive in?');
-      expect(secondSpan).toHaveTextContent(
-        'Start searching your favorite car.'
-      );
+    it('renders the correct text content', () => {
+      screen.getByText('Ready to dive in?');
+      screen.getByText('Start searching your favorite car.');
     });
   });
 
-  describe('call to action link', () => {
-    it('has correct text content and href', () => {
-      const callToActionLink = screen.getByRole('link', {
-        name: /get started/i,
-      });
+  describe('cta link', () => {
+    let linkEl;
 
-      expect(callToActionLink).toHaveTextContent('Get started');
-      expect(callToActionLink).toHaveAttribute('href', '/cars');
+    beforeEach(() => {
+      linkEl = screen.getByRole('link', { name: 'Get started' });
+    });
+
+    it('renders correct text content', () => {
+      expect(linkEl).toBeInTheDocument();
+    });
+
+    it('renders only one cta link', () => {
+      const linkElements = screen.getAllByRole('link');
+
+      expect(linkElements).toHaveLength(1);
+    });
+
+    it('has the correct href', () => {
+      expect(linkEl).toHaveAttribute('href', '/cars');
     });
   });
 });
