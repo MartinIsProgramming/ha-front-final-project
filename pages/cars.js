@@ -1,3 +1,4 @@
+import { useState } from 'react';
 import Filter from '../components/Filter';
 import SectionTitle from '../components/shared/SectionTitle';
 import Cars from '../components/Cars';
@@ -8,15 +9,16 @@ import Head from 'next/head';
 const CarsPage = ({ carsData }) => {
   const [
     filteredCars,
-    inDollars,
     brandOptions,
     modelOptions,
     handleBrandChange,
     handleModelChange,
     handleFilter,
     handleResetFilters,
-    handlePriceCurrency,
   ] = useFilterCars(carsData);
+
+  const [inDollars, setInDollars] = useState(true);
+  const handlePriceCurrency = () => setInDollars(!inDollars);
 
   return (
     <>

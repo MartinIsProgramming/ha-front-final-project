@@ -2,16 +2,18 @@ import { useState } from 'react';
 
 const useFilterCars = carsData => {
   const [filteredCars, setFilteredCars] = useState(carsData);
-  const [inDollars, setInDollars] = useState(true);
 
   const [brandOptions, setBrandOptions] = useState([
     ...new Set(carsData.map(car => car.brand)),
   ]);
+  const [brand, setBrand] = useState(brandOptions[0]);
+
   const [modelOptions, setModelOptions] = useState([
-    ...new Set(filteredCars.map(car => car.model)),
+    ...new Set(
+      carsData.filter(car => car.brand === brand).map(car => car.model)
+    ),
   ]);
 
-  const [brand, setBrand] = useState(brandOptions[0]);
   const [model, setModel] = useState(modelOptions[0]);
 
   const handleBrandChange = e => {
@@ -39,18 +41,14 @@ const useFilterCars = carsData => {
   };
   const handleResetFilters = () => setFilteredCars(carsData);
 
-  const handlePriceCurrency = () => setInDollars(!inDollars);
-
   return [
     filteredCars,
-    inDollars,
     brandOptions,
     modelOptions,
     handleBrandChange,
     handleModelChange,
     handleFilter,
     handleResetFilters,
-    handlePriceCurrency,
   ];
 };
 
