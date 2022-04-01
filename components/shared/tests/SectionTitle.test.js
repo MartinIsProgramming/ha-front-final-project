@@ -6,11 +6,8 @@ describe('SectionTitle component', () => {
     it('renders the default values for both', () => {
       render(<SectionTitle />);
 
-      const titleEl = screen.getByRole('heading', { name: /default title/i });
-      const labelEl = screen.getByText(/default label/i);
-
-      expect(titleEl).toHaveTextContent('Default title');
-      expect(labelEl).toHaveTextContent('Default label');
+      screen.getByRole('heading', { name: 'Default title' });
+      screen.getByText('Default label');
     });
   });
 
@@ -18,11 +15,8 @@ describe('SectionTitle component', () => {
     it('renders the title and label values for both', () => {
       render(<SectionTitle title="test title" label="test label" />);
 
-      const titleEl = screen.getByRole('heading', { name: /test title/i });
-      const labelEl = screen.getByText(/test label/i);
-
-      expect(titleEl).toHaveTextContent('test title');
-      expect(labelEl).toHaveTextContent('test label');
+      screen.getByRole('heading', { name: 'test title' });
+      screen.getByText('test label');
     });
   });
 });
