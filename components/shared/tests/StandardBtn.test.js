@@ -15,7 +15,7 @@ describe('StandardBtn component', () => {
     });
 
     it('renders the correct test', () => {
-      expect(btn).toHaveTextContent(/^test text$/);
+      expect(btn).toHaveTextContent('test text');
     });
 
     it('has correct type props', () => {
@@ -44,7 +44,7 @@ describe('StandardBtn component', () => {
     });
 
     it('renders a link and not a button', () => {
-      expect(linkEl).toBeDefined();
+      expect(linkEl).toBeInTheDocument();
       expect(screen.queryByRole('button')).not.toBeInTheDocument();
     });
 
