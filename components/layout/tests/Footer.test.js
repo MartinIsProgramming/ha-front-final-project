@@ -5,22 +5,20 @@ describe('Footer component', () => {
   beforeEach(() => render(<Footer />));
 
   it('renders the company logo with correct text content', () => {
-    const logoEl = screen.getByRole('link', { name: /carshop/i });
-
-    expect(logoEl).toHaveTextContent('CARSHOP');
+    screen.getByRole('link', { name: 'CARSHOP' });
   });
 
   it('renders the home, about, and cars link', () => {
-    const homeEl = screen.getByRole('link', { name: /home/i });
-    const aboutEl = screen.getByRole('link', { name: /about/i });
-    const carsEl = screen.getByRole('link', { name: /^cars$/i });
+    const links = [
+      { label: 'home', href: '/' },
+      { label: 'about', href: '/about' },
+      { label: 'cars', href: '/cars' },
+    ];
 
-    expect(homeEl).toHaveTextContent('home');
-    expect(aboutEl).toHaveTextContent('about');
-    expect(carsEl).toHaveTextContent('cars');
-
-    expect(homeEl).toHaveAttribute('href', '/');
-    expect(aboutEl).toHaveAttribute('href', '/about');
-    expect(carsEl).toHaveAttribute('href', '/cars');
+    links.forEach(link => {
+      let linkEl = screen.getByRole('link', { name: link.label });
+      expect(linkEl).toBeInTheDocument();
+      expect(linkEl).toHaveAttribute('href', link.href);
+    });
   });
 });
