@@ -24,6 +24,7 @@ const OurStory = () => {
               layout="fill"
               objectFit="cover"
               objectPosition="center"
+              priority
             />
           </div>
           <div>
