@@ -7,11 +7,12 @@ describe('Logo component', () => {
 
     beforeEach(() => {
       render(<Logo />);
-      linkEl = screen.getByRole('link', { name: /carshop/i });
+      linkEl = screen.getByRole('link');
     });
 
     it('renders a link with correct text content', () => {
-      expect(linkEl).toHaveTextContent(/^CARSHOP$/);
+      expect(linkEl).toBeInTheDocument();
+      expect(linkEl).toHaveTextContent('CARSHOP');
     });
 
     it('has / as href value', () => {
@@ -26,9 +27,9 @@ describe('Logo component', () => {
   describe('when isLight is passed as prop', () => {
     it('renders the light version of the logo', () => {
       render(<Logo isLight />);
-      const lightEl = screen.getByRole('link', { name: /carshop/i });
+      const linkEl = screen.getByRole('link');
 
-      expect(lightEl).toHaveClass('text-gray-100');
+      expect(linkEl).toHaveClass('text-gray-100');
     });
   });
 });
