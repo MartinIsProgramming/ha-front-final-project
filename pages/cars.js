@@ -30,6 +30,12 @@ const CarsPage = ({ carsData }) => {
         />
       </Head>
 
+      <div className="max-w-md p-2 mx-auto mt-10 text-center text-gray-100 bg-red-600 rounded">
+        Cars buttons functionality is out of the scope, and therefore not
+        implemented!. Remember that this is a demo to help students to achieve
+        the main functionality.
+      </div>
+
       <section className="px-4 py-12 mx-auto sm:py-20 sm:px-6 lg:px-8 max-w-7xl">
         <SectionTitle title="Search your car" label="collection" />
         <div className="grid mt-4 gap-y-6 md:grid-cols-3 lg:grid-cols-4 md:gap-x-4">
